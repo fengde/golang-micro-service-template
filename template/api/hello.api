@@ -1,0 +1,17 @@
+type HelloRequest {
+	Name string `path:"name,options=you|me"`
+}
+
+type HelloData {
+    Message string `json:"message"`
+}
+
+type HelloResponse {
+    Response
+	Data HelloData `json:"data"`
+}
+
+service template-api {
+	@handler HelloHandler
+	get /from/:name(HelloRequest) returns (HelloResponse);
+}

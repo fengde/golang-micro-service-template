@@ -1,0 +1,12 @@
+import (
+	"hello.api"
+)
+
+type Request {}
+
+type Response {
+	Code      int64       `json:"code"`
+	Message   string      `json:"message"`
+	Data      interface{} `json:"data"`
+	RequestID string      `json:"request_id"`
+}
