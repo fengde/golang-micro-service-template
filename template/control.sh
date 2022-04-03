@@ -96,6 +96,8 @@ function pack() {
 function gozero() {
   if [ -f $apipath ]; then
     goctl api go -api $apipath -dir . -style go_zero
+    go mod tidy
+    go mod vendor
     return 0
   fi
 

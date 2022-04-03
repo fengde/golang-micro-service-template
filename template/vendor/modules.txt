@@ -37,7 +37,7 @@ github.com/lestrrat-go/file-rotatelogs
 github.com/lestrrat-go/file-rotatelogs/internal/option
 # github.com/lestrrat-go/strftime v1.0.5
 github.com/lestrrat-go/strftime
-# github.com/matttproud/golang_protobuf_extensions v1.0.1
+# github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369
 github.com/matttproud/golang_protobuf_extensions/pbutil
 # github.com/openzipkin/zipkin-go v0.4.0
 github.com/openzipkin/zipkin-go/model
@@ -49,11 +49,11 @@ github.com/prometheus/client_golang/prometheus/internal
 github.com/prometheus/client_golang/prometheus/promhttp
 # github.com/prometheus/client_model v0.2.0
 github.com/prometheus/client_model/go
-# github.com/prometheus/common v0.26.0
+# github.com/prometheus/common v0.30.0
 github.com/prometheus/common/expfmt
 github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
 github.com/prometheus/common/model
-# github.com/prometheus/procfs v0.6.0
+# github.com/prometheus/procfs v0.7.3
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 github.com/prometheus/procfs/internal/util
@@ -61,7 +61,7 @@ github.com/prometheus/procfs/internal/util
 github.com/sirupsen/logrus
 # github.com/spaolacci/murmur3 v1.1.0
 github.com/spaolacci/murmur3
-# github.com/zeromicro/go-zero v1.3.1
+# github.com/zeromicro/go-zero v1.3.2
 ## explicit
 github.com/zeromicro/go-zero/core/breaker
 github.com/zeromicro/go-zero/core/codec
@@ -98,6 +98,7 @@ github.com/zeromicro/go-zero/rest/handler
 github.com/zeromicro/go-zero/rest/httpx
 github.com/zeromicro/go-zero/rest/internal
 github.com/zeromicro/go-zero/rest/internal/cors
+github.com/zeromicro/go-zero/rest/internal/encoding
 github.com/zeromicro/go-zero/rest/internal/response
 github.com/zeromicro/go-zero/rest/internal/security
 github.com/zeromicro/go-zero/rest/pathvar
