@@ -10,7 +10,7 @@ FROM centos:7.9.2009
 WORKDIR /runtime
 COPY --from=builder /build/app /runtime/app
 COPY --from=builder /build/etc /runtime/etc
-COPY --from=builder /build/.env_online /runtime/.env
+COPY --from=builder /build/.env /runtime/.env
 
 EXPOSE 8888
 
