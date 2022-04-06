@@ -1,6 +1,6 @@
 module template
 
-go 1.15
+go 1.16
 
 replace github.com/go-resty/resty v1.12.0 => gopkg.in/resty.v1 v1.12.0
 

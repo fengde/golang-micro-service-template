@@ -7,14 +7,15 @@ control.sh 使用提示:
   ----for 本地----
   运行 ./control.sh debug   启动调试
   运行 ./control.sh gozero  重新生成工程脚手架
+  运行 ./control.sh swagger 生成swagger文档
 
   ----for 线上----
   运行 ./control.sh pack    编译打包，生成app.tar.gz
   运行 ./control.sh docker  启动容器运行
-  运行 ./control.sh start   启动服务(日志存于/var/log)
-  运行 ./control.sh stop    停止服务
-  运行 ./control.sh restart 重启服务
-  运行 ./control.sh status  查看服务运行状态
+  运行 ./control.sh start   启动服务-非容器运行 (日志存于/var/log)
+  运行 ./control.sh stop    停止服务-非容器运行
+  运行 ./control.sh restart 重启服务-非容器运行
+  运行 ./control.sh status  查看服务运行状态-非容器运行
 
 ########################################################
 '
@@ -22,7 +23,7 @@ control.sh 使用提示:
 project='template'
 image="$project:latest"
 maingo="$project.go"
-apipath="api/init.api"
+apipath="api/$project.api"
 app=$project
 pidfile="/var/run/$app.pid"
 logfile="/var/log/$app.log"
@@ -96,8 +97,15 @@ function pack() {
 function gozero() {
   if [ -f $apipath ]; then
     goctl api go -api $apipath -dir . -style go_zero
-    go mod tidy
-    go mod vendor
+    return 0
+  fi
+
+  return 1
+}
+
+function swagger() {
+  if [ -f $apipath ]; then
+    goctl api plugin -plugin goctl-swagger="swagger -filename swagger.json" -api $apipath -dir .
     return 0
   fi
 
@@ -177,6 +185,9 @@ case $1 in
     ;;
   gozero)
     gozero
+    ;;
+  swagger)
+    swagger
     ;;
   start)
     start
